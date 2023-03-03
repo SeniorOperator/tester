@@ -21,10 +21,6 @@ if not isfolder("Vortex") then
 	makefolder("Vortex")
 end
 
-if not isfile("Vortex/Scripts.lua") then
-	writefile("Vortex/Scripts.lua",scriptExample)
-end
-
 local player = game.Players.LocalPlayer
 
 local Utilities
@@ -73,7 +69,7 @@ local Scripting = {
 getgenv().AstralScript = Scripting
 
 if game.Players.LocalPlayer.Character.PrimaryPart.Position.Y > 140 and not game.Workspace:FindFirstChild("spawn_cage") then
-	Notifications.Notify("Vortex Ware","Script will load when game started",3.45,HUDColor)
+	Notifications.Notify("Vortex","Script will load when game started",3.45,HUDColor)
 end
 
 repeat
@@ -87,7 +83,7 @@ task.spawn(function()
 	until true == false
 end)
 
-local file = readfile("Vortex/Scripts.lua")
+local file = readfile("Astral/Scripts.lua")
 if workspace:FindFirstChild("Map") then
     loadstring(file)()
 end
@@ -438,7 +434,7 @@ UILibrary.MakeModule{
 		Uninjected = true
 	end,
 	Dropdowns = {},
-	Description = "Uninjects vortex from the game"
+	Description = "Uninjects astral from the game"
 }
 
 UILibrary.MakeModule{
@@ -766,8 +762,8 @@ UILibrary.MakeModule{
 			1,
 			-- current
 			{
-				"V_Day",
-				"V_Night",
+				"Astral_Day",
+				"Astral_Night",
 				"Custom",
 				"Blood_Moon",
 				"Atlantis",
@@ -1091,7 +1087,7 @@ UILibrary.MakeModule{
 			-- Name
 			1,
 			-- current
-			{ "Vortex", "Static", "Rainbow", "Astolfo" }
+			{ "Astral", "Static", "Rainbow", "Astolfo" }
 			-- options
 		},
 		ShowFPS = {
@@ -2642,4 +2638,4 @@ UILibrary.MakeModule{
 	Description = "ESP"
 }
 
-Notifications.Notify("Vortex Ware", "loaded in " .. tick() - executiontime .. " seconds.", 5, getgenv().HUDColor)
+Notifications.Notify("Vortex", "loaded in " .. tick() - executiontime .. " seconds.", 5, getgenv().HUDColor)
